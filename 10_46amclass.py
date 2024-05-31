@@ -89,3 +89,44 @@ iterator = CustomIterator(numbers)
 for num in iterator:
     print(num)
 
+
+#CONTEXT MANAGER
+with open ('data.txt','r') as file:
+    content= file.read()
+    print(content)
+
+
+# LAMDA FUNCTION
+def sub_val(x,y):
+    return x-y
+res= sub_val(3,1)
+print(res)
+
+result= lambda x,y: x*2
+res= result(4,2)
+print(res)
+
+
+#REGULAR EXPRESSION
+import re
+text="Nikki was born in 2000-02-23.She is a wonderful person"
+pattern=r'\d{4}-\d{2}-\d{2}'
+pattern=r'\w*ful'
+
+
+match= re.search(pattern,text)
+if match:
+    print(match.group())
+    print(match.span())  #slicingg
+else:
+    print("NO MATCH")
+
+# Write the regular expression for the language containing the string over {0, 1} 
+# in which there are at least two occurrences of 1's between any two occurrences of 1's between any two occurrences of 0's.
+
+
+str="Why Can't You Hold Me In The Dark"
+pattern=r'[A-Z]'
+match= re.search(pattern, str)
+print(match.group())
+
